@@ -33,7 +33,7 @@ include 'includes/header.php';
                         <a href="tool.php?id=<?php echo (int)$tool['id']; ?>"><img src="<?php echo e($tool['image_url']); ?>" alt="<?php echo e($tool['name']); ?>" class="card-image"></a>
                         <h3 class="card-title"><a href="tool.php?id=<?php echo (int)$tool['id']; ?>" style="color:inherit;text-decoration:none;"><?php echo e($tool['name']); ?></a></h3>
                         <p class="card-text"><?php echo e($tool['description']); ?></p>
-                        <p class="card-price">$<?php echo e(number_format((float)$tool['price'], 2)); ?></p>
+                        <p class="card-price">LKR<?php echo e(number_format((float)$tool['price'], 2)); ?></p>
                         <div class="card-footer" style="display:flex;gap:8px;flex-wrap:wrap;">
                             <a href="tool.php?id=<?php echo (int)$tool['id']; ?>" class="btn-outline btn-small">View</a>
                             <?php if ((int)$tool['stock'] > 0) { ?>
@@ -50,4 +50,9 @@ include 'includes/header.php';
     </section>
 </main>
 <?php include 'includes/footer.php'; ?>
+
+
+
+
+
 

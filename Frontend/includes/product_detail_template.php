@@ -30,7 +30,7 @@ $canAdd = ($maxQty === null || (int)$maxQty > 0);
 <?php if (!empty($productSubtitle)) { ?>
 <p class="text-muted"><?php echo e($productSubtitle); ?></p>
 <?php } ?>
-<p class="card-price" style="margin: var(--spacing-lg) 0;">$<?php echo e(number_format((float)$price, 2)); ?></p>
+<p class="card-price" style="margin: var(--spacing-lg) 0;">LKR<?php echo e(number_format((float)$price, 2)); ?></p>
 <?php if ($productType === 'plant' || $productType === 'tool') { ?>
 <?php if ($canAdd) { ?>
 <p><span class="badge badge-success">In stock: <?php echo (int)$maxQty; ?></span></p>

@@ -36,10 +36,26 @@ include 'includes/header.php';
                 ?>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
+                        
                         <div style="background-color: var(--primary-color); color: white; padding: var(--spacing-md); border-radius: var(--border-radius); margin-bottom: var(--spacing-md); text-align: center;">
                             <p style="font-size: 0.9rem; margin: 0; color: rgba(255,255,255,0.9);"><?php echo e($date_label); ?> • <?php echo e($time_label); ?></p>
                             <h4 style="color: white; margin: 0;"><?php echo e($ws['difficulty']); ?></h4>
                         </div>
+                        <?php if (!empty($ws['image_url'])) { ?>
+        <a href="workshop.php?id=<?php echo (int)$ws['id']; ?>">
+            <img 
+                src="<?php echo e($ws['image_url']); ?>" 
+                alt="<?php echo e($ws['title']); ?>" 
+                class="card-image"
+            >
+        </a>
+    <?php } else { ?>
+        <img 
+            src="assets/images/placeholder.jpg" 
+            alt="No image available" 
+            class="card-image"
+        >
+    <?php } ?>
                         <h3 class="card-title"><?php echo e($ws['title']); ?></h3>
                         <p class="card-text"><?php echo e($ws['description']); ?></p>
                         <p><span class="badge"><?php echo e($ws['difficulty']); ?></span></p>
@@ -49,7 +65,7 @@ include 'includes/header.php';
                         <?php if ((int)$ws['spots_available'] > 0) {
                           $ws_img = !empty($ws['image_url']) ? $ws['image_url'] : '';
                         ?>
-                        <button type="button" class="btn-primary btn-small" onclick="addToCart('workshop', <?php echo (int)$ws['id']; ?>, '<?php echo e($ws['title']); ?>', <?php echo $price; ?>, 1, '<?php echo e($ws_img); ?>', <?php echo (int)$ws['spots_available']; ?>)">Register - $<?php echo e(number_format((float)$ws['price'], 2)); ?></button>
+                        <button type="button" class="btn-primary btn-small" onclick="addToCart('workshop', <?php echo (int)$ws['id']; ?>, '<?php echo e($ws['title']); ?>', <?php echo $price; ?>, 1, '<?php echo e($ws_img); ?>', <?php echo (int)$ws['spots_available']; ?>)">Register - LKR<?php echo e(number_format((float)$ws['price'], 2)); ?></button>
                         <?php } else { ?>
                         <span class="badge" style="background-color:#FF9500;color:white;">Fully Booked</span>
                         <?php } ?>

@@ -111,9 +111,9 @@ include '../includes/header.php';
 <div class="col-md-6 mb-4">
 <div class="card">
 <h3 style="color:var(--primary-color);margin-top:0;margin-bottom:var(--spacing-md);">Revenue Summary</h3>
-<div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-sm);"><span>Total Sales</span><strong style="color:var(--primary-color);font-size:1.1rem;">$<?php echo number_format($total_sales, 2); ?></strong></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-sm);"><span>Total Sales</span><strong style="color:var(--primary-color);font-size:1.1rem;">LKR<?php echo number_format($total_sales, 2); ?></strong></div>
 <div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-sm);"><span>Total Orders</span><strong><?php echo $order_count; ?></strong></div>
-<div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-sm);"><span>Average Order Value</span><strong>$<?php echo number_format($avg_order, 2); ?></strong></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-sm);"><span>Average Order Value</span><strong>LKR<?php echo number_format($avg_order, 2); ?></strong></div>
 <div style="display:flex;justify-content:space-between;"><span>Total Customers</span><strong><?php echo $customer_count; ?></strong></div>
 </div>
 </div>
@@ -153,8 +153,8 @@ include '../includes/header.php';
 <tr style="border-bottom:1px solid var(--light-gray);">
 <td style="padding:var(--spacing-md);"><?php echo e($tp['product_name']); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo (int)$tp['units_sold']; ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo number_format((float)$tp['revenue'], 2); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo number_format((float)$tp['avg_price'], 2); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo number_format((float)$tp['revenue'], 2); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo number_format((float)$tp['avg_price'], 2); ?></td>
 </tr>
 <?php } ?>
 </tbody>
@@ -170,12 +170,12 @@ $tool_pct = round(($type_totals['tool'] / $type_grand) * 100);
 <div style="display:flex;justify-content:space-between;margin-bottom:var(--spacing-md);align-items:center;">
 <span>Plants</span>
 <div style="flex:1;margin:0 var(--spacing-md);height:8px;background-color:var(--light-gray);border-radius:var(--border-radius);"><div style="height:100%;background-color:var(--primary-color);border-radius:var(--border-radius);width:<?php echo $plant_pct; ?>%;"></div></div>
-<strong>$<?php echo number_format($type_totals['plant'], 2); ?> (<?php echo $plant_pct; ?>%)</strong>
+<strong>LKR<?php echo number_format($type_totals['plant'], 2); ?> (<?php echo $plant_pct; ?>%)</strong>
 </div>
 <div style="display:flex;justify-content:space-between;align-items:center;">
 <span>Tools</span>
 <div style="flex:1;margin:0 var(--spacing-md);height:8px;background-color:var(--light-gray);border-radius:var(--border-radius);"><div style="height:100%;background-color:var(--secondary-color);border-radius:var(--border-radius);width:<?php echo $tool_pct; ?>%;"></div></div>
-<strong>$<?php echo number_format($type_totals['tool'], 2); ?> (<?php echo $tool_pct; ?>%)</strong>
+<strong>LKR<?php echo number_format($type_totals['tool'], 2); ?> (<?php echo $tool_pct; ?>%)</strong>
 </div>
 </div>
 </div>

@@ -1,10 +1,19 @@
 <?php
+
 require_once __DIR__ . '/../includes/admin_auth.php';
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-$row = array('name' => '', 'category' => 'Indoor', 'description' => '', 'price' => '', 'stock' => '', 'difficulty' => 'Beginner', 'image_url' => 'assets/images/plant-1.jpg', 'is_active' => 1);
+$row = array(
+  'name' => '',
+  'category' => 'Indoor',
+  'description' => '',
+  'price' => '',
+  'stock' => '',
+  'image_url' => 'assets/images/plant-1.jpg',
+  'is_active' => 1
+);
 if ($id > 0) {
   $stmt = $pdo->prepare('SELECT * FROM plants WHERE id = :id');
   $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -33,7 +42,6 @@ include '../includes/header.php';
 <div class="form-group"><label>Description</label><textarea name="description" rows="3"><?php echo e($row['description']); ?></textarea></div>
 <div class="form-group"><label>Price *</label><input type="text" name="price" required value="<?php echo e($row['price']); ?>"></div>
 <div class="form-group"><label>Stock *</label><input type="number" name="stock" required value="<?php echo e($row['stock']); ?>"></div>
-<div class="form-group"><label>Difficulty</label><input type="text" name="difficulty" value="<?php echo e($row['difficulty']); ?>"></div>
 <div class="form-group"><label>Image URL</label><input type="text" name="image_url" value="<?php echo e($row['image_url']); ?>"></div>
 <label><input type="checkbox" name="is_active" value="1" <?php echo ((int) $row['is_active'] === 1) ? 'checked' : ''; ?>> Active</label><br><br>
 <button type="submit" class="btn-primary">Save</button> <a href="plants.php" class="btn-outline">Cancel</a>

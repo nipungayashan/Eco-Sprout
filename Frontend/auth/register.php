@@ -77,7 +77,7 @@ if (isset($_SESSION['register_old'])) {
                             <div id="confirmPasswordError" class="error-message" style="color: #d32f2f; font-size: 0.85rem; margin-top: 4px;"></div>
                         </div>
 
-                        <div style="margin-bottom: var(--spacing-lg);">
+                        <div class="terms-row">
                             <label style="display: flex; align-items: flex-start; gap: var(--spacing-sm); font-weight: 400; margin: 0; cursor: pointer;">
                                 <input type="checkbox" id="terms" name="terms" required style="margin-top: 4px;">
                                 <span style="font-size: 0.9rem;">I agree to the Terms of Service and Privacy Policy *</span>

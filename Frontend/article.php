@@ -1,15 +1,15 @@
 <?php
 $pageTitle = 'Article - EcoSprout Nursery';
-$cssPath = '../assets/css/style.css';
-$jsPath = '../assets/js/main.js';
-include '../includes/header.php';
+$cssPath = 'assets/css/style.css';
+$jsPath = 'assets/js/main.js';
+include __DIR__ . '/includes/header.php';
 ?>
 
 <main>
     <!-- Article Section -->
     <section class="section">
         <div class="container">
-            <a href="../blog.php" class="btn-outline btn-small" style="margin-bottom: var(--spacing-lg);">← Back to Blog</a>
+            <a href="blog.php" class="btn-outline btn-small" style="margin-bottom: var(--spacing-lg);">← Back to Blog</a>
             
             <article>
                 <div style="max-width: 800px; margin: 0 auto;">
@@ -22,7 +22,7 @@ include '../includes/header.php';
                         <span>Reading time: 8 minutes</span>
                     </div>
 
-                    <img src="../assets/images/blog-1.jpg" alt="Article" style="width: 100%; border-radius: var(--border-radius-lg); margin-bottom: var(--spacing-xl);">
+                    <img src="assets/images/plantdead.jpg" alt="Article" style="width: 100%; border-radius: var(--border-radius-lg); margin-bottom: var(--spacing-xl);">
 
                     <p>Has one of your beloved houseplants suddenly started to droop? Don't worry! Many plants can be revived with the right care and attention. In this comprehensive guide, we'll explore the common signs of a dying plant and provide you with actionable steps to bring your green friend back to life.</p>
 
@@ -77,7 +77,7 @@ include '../includes/header.php';
                     <div class="row mt-3">
                         <div class="col-md-6 col-lg-4 mb-4">
                             <div class="card">
-                                <img src="../assets/images/blog-2.jpg" alt="Related" class="card-image">
+                                <img src="assets/images/GardenMaintenance.jpg" alt="Related" class="card-image">
                                 <h3 class="card-title">Summer Garden Maintenance</h3>
                                 <p class="card-text">Keep your garden thriving during hot summer months.</p>
                                 <a href="article.php?id=2" class="btn-outline btn-small">Read More</a>
@@ -85,7 +85,7 @@ include '../includes/header.php';
                         </div>
                         <div class="col-md-6 col-lg-4 mb-4">
                             <div class="card">
-                                <img src="../assets/images/blog-4.jpg" alt="Related" class="card-image">
+                                <img src="assets/images/blog-4.jpg" alt="Related" class="card-image">
                                 <h3 class="card-title">Best Plants for Beginners</h3>
                                 <p class="card-text">Starting your plant journey? Here are the top easiest plants.</p>
                                 <a href="article.php?id=4" class="btn-outline btn-small">Read More</a>
@@ -93,7 +93,7 @@ include '../includes/header.php';
                         </div>
                         <div class="col-md-6 col-lg-4 mb-4">
                             <div class="card">
-                                <img src="../assets/images/blog-5.jpg" alt="Related" class="card-image">
+                                <img src="assets/images/blog-5.jpg" alt="Related" class="card-image">
                                 <h3 class="card-title">Eco-Friendly Gardening</h3>
                                 <p class="card-text">Learn sustainable gardening practices for your garden.</p>
                                 <a href="article.php?id=5" class="btn-outline btn-small">Read More</a>
@@ -106,4 +106,4 @@ include '../includes/header.php';
     </section>
 </main>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

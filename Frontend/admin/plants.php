@@ -49,7 +49,14 @@ include '../includes/header.php';
 <a href="plant-form.php" class="btn-primary">+ Add Plant</a>
 </div>
 <div class="card"><div style="overflow-x:auto;"><table style="width:100%;font-size:.95rem;">
-<thead><tr style="border-bottom:2px solid var(--light-gray);"><th style="padding:var(--spacing-md);text-align:left;">ID</th><th style="padding:var(--spacing-md);text-align:left;">Name</th><th style="padding:var(--spacing-md);text-align:left;">Category</th><th style="padding:var(--spacing-md);text-align:center;">Price</th><th style="padding:var(--spacing-md);text-align:center;">Stock</th><th style="padding:var(--spacing-md);text-align:center;">Actions</th></tr></thead>
+<thead><tr style="border-bottom:2px solid var(--light-gray);">
+  <th style="padding:var(--spacing-md);text-align:left;">ID</th>
+  <th style="padding:var(--spacing-md);text-align:left;">Name</th>
+  <th style="padding:var(--spacing-md);text-align:left;">Category</th>
+  <th style="padding:var(--spacing-md);text-align:center;">Price</th>
+  <th style="padding:var(--spacing-md);text-align:center;">Stock</th>
+  <th style="padding:var(--spacing-md);text-align:center;">Actions</th>
+</tr></thead>
 <tbody>
 <?php if (count($plants) === 0) { ?><tr><td colspan="6" style="padding:var(--spacing-md);text-align:center;">No plants found.</td></tr><?php } ?>
 <?php foreach ($plants as $plant) { ?>
@@ -57,7 +64,7 @@ include '../includes/header.php';
 <td style="padding:var(--spacing-md);"><?php echo (int) $plant['id']; ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($plant['name']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($plant['category']); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float) $plant['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float) $plant['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo (int) $plant['stock']; ?></td>
 <td style="padding:var(--spacing-md);text-align:center;">
 <a href="plant-form.php?id=<?php echo (int) $plant['id']; ?>" class="btn-outline btn-small" style="margin-right:4px;">Edit</a>

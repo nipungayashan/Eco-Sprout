@@ -51,7 +51,7 @@ include '../includes/header.php';
 <h1 style="margin-bottom: var(--spacing-lg);">Welcome back, <?php echo e($_SESSION['name']); ?>!</h1>
 <div class="row mb-4">
 <div class="col-md-6 col-lg-4 mb-3"><div class="card text-center"><h3 style="color:var(--primary-color);font-size:2rem;"><?php echo $order_count; ?></h3><p class="text-muted">Total Orders</p></div></div>
-<div class="col-md-6 col-lg-4 mb-3"><div class="card text-center"><h3 style="color:var(--primary-color);font-size:2rem;">$<?php echo number_format($total_spent, 2); ?></h3><p class="text-muted">Total Spent</p></div></div>
+<div class="col-md-6 col-lg-4 mb-3"><div class="card text-center"><h3 style="color:var(--primary-color);font-size:2rem;">LKR <?php echo number_format($total_spent, 2); ?></h3><p class="text-muted">Total Spent</p></div></div>
 <div class="col-md-6 col-lg-4 mb-3"><div class="card text-center"><h3 style="color:var(--primary-color);font-size:2rem;"><?php echo $booking_count; ?></h3><p class="text-muted">Active Bookings</p></div></div>
 </div>
 <div class="card mb-4">
@@ -63,7 +63,7 @@ include '../includes/header.php';
 <td style="padding:var(--spacing-sm);"><?php echo e($o['order_number']); ?></td>
 <td style="padding:var(--spacing-sm);"><?php echo e(substr($o['order_date'], 0, 10)); ?></td>
 <td style="padding:var(--spacing-sm);"><?php echo e($o['items_text']); ?></td>
-<td style="padding:var(--spacing-sm);">$<?php echo e(number_format((float)$o['total_amount'], 2)); ?></td>
+<td style="padding:var(--spacing-sm);">LKR<?php echo e(number_format((float)$o['total_amount'], 2)); ?></td>
 <td style="padding:var(--spacing-sm);"><?php echo e(order_status_label($o['status'])); ?></td>
 </tr>
 <?php } ?>

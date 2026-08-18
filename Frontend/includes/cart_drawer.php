@@ -9,7 +9,7 @@
     <div class="cart-drawer-footer">
         <div class="cart-total-row">
             <span>Total</span>
-            <strong id="cartSidebarTotal">$0.00</strong>
+            <strong id="cartSidebarTotal">LKR0.00</strong>
         </div>
         <a href="#" id="cartSidebarCheckout" class="btn-primary cart-checkout-btn">Checkout</a>
     </div>

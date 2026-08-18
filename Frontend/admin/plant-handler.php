@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
 require_once __DIR__ . '/../includes/admin_auth.php';
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
@@ -27,7 +32,6 @@ if ($action === 'save') {
   $description = trim($_POST['description']);
   $price = trim($_POST['price']);
   $stock = trim($_POST['stock']);
-  $difficulty = trim($_POST['difficulty']);
   $image_url = trim($_POST['image_url']);
   $is_active = isset($_POST['is_active']) ? 1 : 0;
   if ($name === '' || $category === '' || $price === '' || $stock === '') {
@@ -37,24 +41,38 @@ if ($action === 'save') {
   }
   try {
     if ($plant_id > 0) {
-      $stmt = $pdo->prepare('UPDATE plants SET name=:name, category=:category, description=:description, price=:price, stock=:stock, difficulty=:difficulty, image_url=:image_url, is_active=:is_active WHERE id=:id');
+      $stmt = $pdo->prepare(
+        'UPDATE plants
+         SET name=:name,
+         category=:category,
+         description=:description,
+         price=:price,
+         stock=:stock,
+         image_url=:image_url,
+         is_active=:is_active
+         WHERE id=:id'
+        );
       $stmt->bindParam(':id', $plant_id, PDO::PARAM_INT);
     } else {
-      $stmt = $pdo->prepare('INSERT INTO plants (name, category, description, price, stock, difficulty, image_url, is_active) VALUES (:name,:category,:description,:price,:stock,:difficulty,:image_url,:is_active)');
+      $stmt = $pdo->prepare(
+        'INSERT INTO plants
+        (name, category, description, price, stock, image_url, is_active)
+        VALUES
+        (:name,:category,:description,:price,:stock,:image_url,:is_active)'
+        ); 
     }
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':category', $category);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':price', $price);
     $stmt->bindParam(':stock', $stock, PDO::PARAM_INT);
-    $stmt->bindParam(':difficulty', $difficulty);
     $stmt->bindParam(':image_url', $image_url);
     $stmt->bindParam(':is_active', $is_active, PDO::PARAM_INT);
     $stmt->execute();
     $_SESSION['flash_ok'] = ($plant_id > 0) ? 'Plant updated.' : 'Plant added.';
   } catch (PDOException $ex) {
-    $_SESSION['flash_err'] = 'Database error saving plant.';
-  }
+    die('PDO Error: ' . $ex->getMessage());
+}
   header('Location: plants.php');
   exit;
 }

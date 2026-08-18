@@ -60,7 +60,7 @@ include '../includes/header.php';
 <tr style="border-bottom:1px solid var(--light-gray);">
 <td style="padding:var(--spacing-md);"><?php echo (int)$tool['id']; ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($tool['name']); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float)$tool['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float)$tool['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo (int)$tool['stock']; ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo ((int)$tool['is_active']===1)?'Yes':'No'; ?></td>
 <td style="padding:var(--spacing-md);text-align:center;">

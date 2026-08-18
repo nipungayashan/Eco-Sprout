@@ -80,7 +80,7 @@ include '../includes/header.php';
 <td style="padding:var(--spacing-md);"><?php echo (int)$plant['id']; ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($plant['name']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($plant['category']); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float)$plant['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float)$plant['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><span class="<?php echo $stock_class; ?>" style="<?php echo $stock_style; ?>"><?php echo (int)$plant['stock']; ?></span></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo ((int)$plant['is_active']===1)?'Yes':'No'; ?></td>
 <td style="padding:var(--spacing-md);text-align:center;">

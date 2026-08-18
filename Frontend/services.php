@@ -26,7 +26,7 @@ include 'includes/header.php';
                 <?php } ?>
                 <?php foreach ($services as $service) {
                   $price = number_format((float)$service['price'], 2, '.', '');
-                  $price_display = '$' . number_format((float)$service['price'], 2);
+                  $price_display = 'LKR' . number_format((float)$service['price'], 2);
                   if (!empty($service['price_note'])) {
                     $price_display .= ' / ' . $service['price_note'];
                   }

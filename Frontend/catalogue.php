@@ -31,19 +31,24 @@ include 'includes/header.php';
                             <input type="text" id="searchInput" placeholder="Search plants..." onkeyup="searchProducts()">
                         </div>
                         <div class="filter-group">
-                            <h4 class="filter-title" style="font-size: 1rem;">Category</h4>
-                            <label class="filter-label">
-                                <input type="checkbox" onchange="filterByCategory('all')" checked> All Plants
-                            </label>
-                            <?php foreach ($categories as $cat) {
-                              $cat_key = strtolower($cat);
-                            ?>
-                            <label class="filter-label">
-                                <input type="checkbox" onchange="filterByCategory('<?php echo e($cat_key); ?>')"> <?php echo e($cat); ?>
-                            </label>
-                            <?php } ?>
+                        <h4 class="filter-title" style="font-size:1rem;">Category</h4>
+
+                        <label class="category-filter-label">
+                            <input type="radio" name="categoryFilter" value="all" checked> 
+                            All Plants
+                        </label>
+
+                        <?php foreach ($categories as $cat) {
+                            $cat_key = strtolower($cat);
+                         ?>
+                        <label class="category-filter-label">
+                            <input type="radio" name="categoryFilter" value="<?php echo e($cat_key); ?>">
+                        <?php echo e($cat); ?>
+                        </label>
+                        <?php } ?>
                         </div>
-                    </div>
+                        </div>
+                    
                 </div>
 
                 <div class="col-lg-9">
@@ -56,12 +61,12 @@ include 'includes/header.php';
                           $price = number_format((float)$plant['price'], 2, '.', '');
                         ?>
                         <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="<?php echo e($cat_key); ?>">
-                            <div class="card">
+                            <div class="card catalogue-card">
                                 <a href="plant.php?id=<?php echo (int)$plant['id']; ?>">
                                     <img src="<?php echo e($plant['image_url']); ?>" alt="<?php echo e($plant['name']); ?>" class="card-image">
                                 </a>
                                 <h3 class="card-title"><a href="plant.php?id=<?php echo (int)$plant['id']; ?>" style="color:inherit;text-decoration:none;"><?php echo e($plant['name']); ?></a></h3>
-                                <p class="text-muted"><?php echo e($plant['category']); ?> • <?php echo e($plant['difficulty']); ?></p>
+                                <?php echo e($plant['category']); ?>
                                 <p class="card-text"><?php echo e($plant['description']); ?></p>
                                 <p class="card-price">$<?php echo e(number_format((float)$plant['price'], 2)); ?></p>
                                 <div class="card-footer" style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -81,4 +86,61 @@ include 'includes/header.php';
         </div>
     </section>
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilters = document.querySelectorAll(
+        'input[name="categoryFilter"]'
+    );
+
+    function filterPlants() {
+
+        const searchText =
+            searchInput.value.toLowerCase();
+
+        const selectedCategory =
+            document.querySelector(
+                'input[name="categoryFilter"]:checked'
+            ).value;
+
+        document.querySelectorAll('.product-item')
+            .forEach(card => {
+
+                const category =
+                    card.dataset.category;
+
+                const plantName =
+                    card.querySelector('.card-title')
+                        .textContent
+                        .toLowerCase();
+
+                const categoryMatch =
+                    selectedCategory === 'all' ||
+                    category === selectedCategory;
+
+                const searchMatch =
+                    plantName.includes(searchText);
+
+                card.style.display =
+                    categoryMatch && searchMatch
+                        ? ''
+                        : 'none';
+            });
+    }
+
+    searchInput.addEventListener(
+        'input',
+        filterPlants
+    );
+
+    categoryFilters.forEach(filter => {
+        filter.addEventListener(
+            'change',
+            filterPlants
+        );
+    });
+
+});
+</script>
 <?php include 'includes/footer.php'; ?>

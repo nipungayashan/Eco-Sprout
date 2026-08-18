@@ -3,7 +3,7 @@ require_once __DIR__ . '/../includes/staff_auth.php';
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-$row = array('name'=>'','description'=>'','price'=>'','price_note'=>'','icon_emoji'=>'🌿','is_active'=>1);
+$row = array('name'=>'','description'=>'','price'=>'','price_note'=>'','icon_emoji'=>'','is_active'=>1);
 if ($id > 0) {
   $stmt = $pdo->prepare('SELECT * FROM services WHERE id = :id');
   $stmt->bindParam(':id', $id, PDO::PARAM_INT);

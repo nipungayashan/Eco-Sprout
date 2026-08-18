@@ -150,7 +150,7 @@ function updateCartBadge() {
 }
 
 function formatMoney(amount) {
-  return '$' + parseFloat(amount).toFixed(2);
+  return 'LKR' + parseFloat(amount).toFixed(2);
 }
 
 function openCartSidebar() {

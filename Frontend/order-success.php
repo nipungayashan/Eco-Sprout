@@ -32,7 +32,7 @@ include 'includes/header.php';
 <div class="container" style="max-width: 700px; text-align: center;">
 <div class="card" style="border: 2px solid var(--light-green);">
 <h1 style="color: var(--light-green);">Order placed successfully!</h1>
-<p style="font-size: 1.1rem;">Thank you. No payment gateway is required for this demo — your order is saved in the system.</p>
+<p style="font-size: 1.1rem;">Thank you!</p>
 
 <?php if ($order) { ?>
 <p style="margin-top: var(--spacing-lg);"><strong>Order number:</strong> <?php echo e($order['order_number']); ?></p>
@@ -50,7 +50,7 @@ include 'includes/header.php';
 <?php if (isset($_SESSION['user_id']) && (int)$_SESSION['role'] === 0) { ?>
 <a href="customer/orders.php" class="btn-primary">View My Orders</a>
 <a href="customer/bookings.php" class="btn-outline">View My Bookings</a>
-<?php } ?>
+<?php } ?>  
 <a href="index.php" class="btn-outline">Return to Menu</a>
 </div>
 </div>
@@ -67,7 +67,7 @@ include 'includes/header.php';
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-<p>Your order has been recorded. Staff and admin dashboards will show it immediately. Plants and tools appear under <strong>Orders</strong>; services and workshops also appear under <strong>Bookings</strong> on your account.</p>
+<p>Your order has been recorded. </p>
 </div>
 <div class="modal-footer" style="border:none;">
 <button type="button" class="btn-primary" data-bs-dismiss="modal">OK</button>

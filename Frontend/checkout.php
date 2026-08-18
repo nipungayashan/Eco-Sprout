@@ -55,7 +55,7 @@ include 'includes/header.php';
 <h3 style="color: var(--primary-color);">Summary</h3>
 <div class="cart-total-row" style="margin: var(--spacing-lg) 0;">
 <span>Total</span>
-<strong id="checkoutPageTotal" style="color: var(--primary-color);">$0.00</strong>
+<strong id="checkoutPageTotal" style="color: var(--primary-color);">LKR0.00</strong>
 </div>
 <?php if ($isLoggedIn) { ?>
 <button type="button" class="btn-primary" id="goConfirmBtn" style="width:100%; padding:var(--spacing-md);">Continue to Confirm</button>

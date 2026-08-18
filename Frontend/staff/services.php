@@ -60,7 +60,7 @@ include '../includes/header.php';
 <tr style="border-bottom:1px solid var(--light-gray);">
 <td style="padding:var(--spacing-md);"><?php echo (int)$service['id']; ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($service['icon_emoji'] . ' ' . $service['name']); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float)$service['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float)$service['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($service['price_note']); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo ((int)$service['is_active']===1)?'Yes':'No'; ?></td>
 <td style="padding:var(--spacing-md);text-align:center;">

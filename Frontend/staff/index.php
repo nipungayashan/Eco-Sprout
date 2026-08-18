@@ -61,7 +61,7 @@ include '../includes/header.php';
 <tr style="border-bottom:1px solid var(--light-gray);">
 <td style="padding:var(--spacing-md);"><?php echo e($order['order_number']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($order['customer_name']); ?></td>
-<td style="padding:var(--spacing-md);">$<?php echo e(number_format((float)$order['total_amount'], 2)); ?></td>
+<td style="padding:var(--spacing-md);">LKR<?php echo e(number_format((float)$order['total_amount'], 2)); ?></td>
 <td style="padding:var(--spacing-md);"><span class="badge badge-success"><?php echo e(order_status_label($order['status'])); ?></span></td>
 <td style="padding:var(--spacing-md);text-align:center;"><a href="orders.php" class="btn-outline btn-small">Manage</a></td>
 </tr>

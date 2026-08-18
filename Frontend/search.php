@@ -77,7 +77,7 @@ include 'includes/header.php';
 <td style="padding:var(--spacing-md);"><?php echo e($r['type']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($r['title']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e(substr((string) $r['description'], 0, 120)); ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float) $r['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float) $r['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><a href="<?php echo e($r['url']); ?>" class="btn-outline btn-small">View</a></td>
 </tr>
 <?php } ?>

@@ -298,23 +298,30 @@ function filterByCategory(category) {
    SIMPLE SEARCH FUNCTION
    ======================================== */
 
-function searchProducts() {
-    var searchInput = document.getElementById('searchInput');
+document.addEventListener('DOMContentLoaded', function () {
+
+    const searchInput = document.getElementById('searchInput');
     if (!searchInput) return;
-    
-    var filter = searchInput.value.toUpperCase();
-    var products = document.querySelectorAll('.product-item');
-    
-    for (var i = 0; i < products.length; i++) {
-        var text = products[i].textContent || products[i].innerText;
-        
-        if (text.toUpperCase().indexOf(filter) > -1) {
-            products[i].style.display = '';
-        } else {
-            products[i].style.display = 'none';
-        }
+
+    const products = document.querySelectorAll('.product-item');
+
+    function filterProducts() {
+        const filter = searchInput.value.toLowerCase();
+
+        products.forEach(product => {
+            const titleEl = product.querySelector('.card-title');
+            const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+
+            if (title.includes(filter)) {
+                product.style.display = '';
+            } else {
+                product.style.display = 'none';
+            }
+        });
     }
-}
+
+    searchInput.addEventListener('input', filterProducts);
+});
 
 /* ========================================
    QUANTITY CONTROLS

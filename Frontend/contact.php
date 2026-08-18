@@ -1,4 +1,40 @@
 <?php
+require_once __DIR__ . '/config/db.php';
+
+$message_sent = false;
+$error_message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if ($name && $email && $subject && $message) {
+
+        try {
+
+            $stmt = $pdo->prepare("
+                INSERT INTO customer_queries
+                (full_name, email, subject, message, status)
+                VALUES
+                (:name, :email, :subject, :message, 'new')
+            ");
+
+            $stmt->execute([
+                ':name' => $name,
+                ':email' => $email,
+                ':subject' => $subject,
+                ':message' => $message
+            ]);
+
+            $message_sent = true;
+
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+        }
+    }
+}
 $pageTitle = 'Contact Us - EcoSprout Nursery';
 $cssPath = 'assets/css/style.css';
 $jsPath = 'assets/js/main.js';
@@ -24,12 +60,12 @@ include 'includes/header.php';
                     
                     <div class="card" style="margin-bottom: var(--spacing-lg);">
                         <h4 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">📍 Address</h4>
-                        <p>123 Green Lane<br>Eco City, EC 12345<br>United States</p>
+                        <p>46,1st Street, <br>Kegalle<br>Colombo</p>
                     </div>
 
                     <div class="card" style="margin-bottom: var(--spacing-lg);">
                         <h4 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">📞 Phone</h4>
-                        <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        <p><a href="tel:+113564378">+11 356 4378</a></p>
                     </div>
 
                     <div class="card" style="margin-bottom: var(--spacing-lg);">
@@ -46,12 +82,22 @@ include 'includes/header.php';
                         </p>
                     </div>
                 </div>
+                <?php if ($message_sent): ?>
+                    <div class="alert alert-success mb-3">
+                        Message sent successfully.
+                    </div>
+                <?php endif; ?>
 
+                <?php if (!empty($error_message)): ?>
+                <div class="alert alert-danger mb-3">
+                <?php echo htmlspecialchars($error_message); ?>
+                </div>
+                <?php endif; ?>
                 <!-- Contact Form -->
                 <div class="col-md-6 mb-4">
                     <h2 style="margin-bottom: var(--spacing-lg);">Send us a Message</h2>
                     
-                    <form id="contactForm">
+                    <form method="POST" action="">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>

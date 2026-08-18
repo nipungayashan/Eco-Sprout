@@ -62,7 +62,7 @@ include '../includes/header.php';
 <td style="padding:var(--spacing-md);"><?php echo e($ws['title']); ?></td>
 <td style="padding:var(--spacing-md);"><?php echo e($ws['event_date'] . ' ' . substr($ws['event_time'], 0, 5)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;"><?php echo (int)$ws['spots_available']; ?> / <?php echo (int)$ws['capacity']; ?></td>
-<td style="padding:var(--spacing-md);text-align:center;">$<?php echo e(number_format((float)$ws['price'], 2)); ?></td>
+<td style="padding:var(--spacing-md);text-align:center;">LKR<?php echo e(number_format((float)$ws['price'], 2)); ?></td>
 <td style="padding:var(--spacing-md);text-align:center;">
 <a href="workshop-form.php?id=<?php echo (int)$ws['id']; ?>" class="btn-outline btn-small" style="margin-right:4px;">Edit</a>
 <form method="post" action="workshop-handler.php" style="display:inline;" onsubmit="return confirm('Delete this workshop?');">

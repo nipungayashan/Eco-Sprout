@@ -27,7 +27,6 @@ if ($action === 'save') {
   $description = trim($_POST['description']);
   $price = trim($_POST['price']);
   $stock = trim($_POST['stock']);
-  $difficulty = trim($_POST['difficulty']);
   $image_url = trim($_POST['image_url']);
   // Optional extra images are currently ignored at DB level to stay compatible
   // with databases that have not run the add_product_images.sql migration yet.
@@ -44,12 +43,12 @@ if ($action === 'save') {
   try {
     if ($plant_id > 0) {
       $sql = 'UPDATE plants SET name=:name, category=:category, description=:description, price=:price,
-              stock=:stock, difficulty=:difficulty, image_url=:image_url, is_active=:is_active WHERE id=:id';
+              stock=:stock, image_url=:image_url, is_active=:is_active WHERE id=:id';
       $stmt = $pdo->prepare($sql);
       $stmt->bindParam(':id', $plant_id, PDO::PARAM_INT);
     } else {
-      $sql = 'INSERT INTO plants (name, category, description, price, stock, difficulty, image_url, is_active)
-              VALUES (:name, :category, :description, :price, :stock, :difficulty, :image_url, :is_active)';
+      $sql = 'INSERT INTO plants (name, category, description, price, stock, image_url, is_active)
+              VALUES (:name, :category, :description, :price, :stock, :image_url, :is_active)';
       $stmt = $pdo->prepare($sql);
     }
     $stmt->bindParam(':name', $name);
@@ -57,7 +56,6 @@ if ($action === 'save') {
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':price', $price);
     $stmt->bindParam(':stock', $stock, PDO::PARAM_INT);
-    $stmt->bindParam(':difficulty', $difficulty);
     $stmt->bindParam(':image_url', $image_url);
     $stmt->bindParam(':is_active', $is_active, PDO::PARAM_INT);
     $stmt->execute();

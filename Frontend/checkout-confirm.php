@@ -25,7 +25,7 @@ include 'includes/header.php';
 <div id="confirmItemsList"></div>
 <div class="cart-total-row" style="margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 2px solid var(--light-gray);">
 <span><strong>Total</strong></span>
-<strong id="confirmTotal" style="color: var(--primary-color); font-size: 1.2rem;">$0.00</strong>
+<strong id="confirmTotal" style="color: var(--primary-color); font-size: 1.2rem;">LKR0.00</strong>
 </div>
 </div>
 

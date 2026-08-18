@@ -37,8 +37,8 @@
                     <h4 class="footer-title">Get In Touch</h4>
                     <p class="footer-text">
                         <strong>Email:</strong> info@ecosprout.com<br>
-                        <strong>Phone:</strong> +1 (555) 123-4567<br>
-                        <strong>Address:</strong> 123 Green Lane, Eco City, EC 12345
+                        <strong>Phone:</strong> +11 356 4378<br>
+                        <strong>Address:</strong> 46,1st Street, Kegalle
                     </p>
                 </div>
             </div>

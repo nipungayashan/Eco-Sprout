@@ -31,23 +31,9 @@ include '../includes/header.php';
 <?php include '../includes/flash_messages.php'; ?>
 <div class="row" style="margin-bottom:var(--spacing-xl);">
 <div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Total Users</p><h2 style="color:var(--primary-color);margin:0;"><?php echo $total_users; ?></h2></div></div>
-<div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Total Revenue</p><h2 style="color:var(--secondary-color);margin:0;">$<?php echo number_format($total_revenue, 2); ?></h2></div></div>
+<div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Total Revenue</p><h2 style="color:var(--secondary-color);margin:0;">LKR<?php echo number_format($total_revenue, 2); ?></h2></div></div>
 <div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Total Orders</p><h2 style="color:var(--accent-color);margin:0;"><?php echo $total_orders; ?></h2></div></div>
-<div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Avg Order Value</p><h2 style="color:#FF9500;margin:0;">$<?php echo number_format($avg_order, 2); ?></h2></div></div>
-</div>
-<div class="card" style="margin-bottom:var(--spacing-xl);">
-<h3 style="color:var(--primary-color);margin-top:0;margin-bottom:var(--spacing-lg);">All Modules (Admin Full Access)</h3>
-<div class="row">
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="users.php">Users CRUD</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="reports.php">Reports</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="plants.php">Plants CRUD</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="tools.php">Tools CRUD</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="services.php">Services CRUD</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="workshops.php">Workshops CRUD</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="orders.php">Orders</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="queries.php">Queries</a></div>
-<div class="col-md-6 col-lg-4 mb-3"><a class="btn-outline" style="display:block;text-align:center;" href="../customer/dashboard.php">Customer Area</a></div>
-</div>
+<div class="col-lg-3 mb-4"><div class="card"><p class="text-muted" style="margin-bottom:var(--spacing-sm);">Avg Order Value</p><h2 style="color:#FF9500;margin:0;">LKR<?php echo number_format($avg_order, 2); ?></h2></div></div>
 </div>
 <div class="row" style="margin-bottom:var(--spacing-xl);">
 <div class="col-md-6 mb-4">

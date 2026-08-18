@@ -19,7 +19,7 @@ if (!$product) {
 
 $productType = 'plant';
 $productName = $product['name'];
-$productSubtitle = $product['category'] . ' • ' . $product['difficulty'];
+$productSubtitle = $product['category'];
 $listUrl = 'catalogue.php';
 $maxQty = (int) $product['stock'];
 $price = $product['price'];

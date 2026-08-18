@@ -42,7 +42,9 @@ include 'includes/header.php';
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="card">
                         <a href="plant.php?id=<?php echo (int)$plant['id']; ?>">
-                            <img src="<?php echo e($plant['image_url']); ?>" alt="<?php echo e($plant['name']); ?>" class="card-image">
+                        <img src="<?php echo e($plant['image_url']); ?>"
+                        alt="<?php echo e($plant['name']); ?>"
+                        class="card-image">
                         </a>
                         <h3 class="card-title"><?php echo e($plant['name']); ?></h3>
                         <p class="card-text"><?php echo e($plant['description']); ?></p>
@@ -64,7 +66,7 @@ include 'includes/header.php';
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="section" style="background-color: #f0f0f0;">
+    <section class="section why-section">
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose EcoSprout</h2>
@@ -74,28 +76,28 @@ include 'includes/header.php';
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card text-center">
-                        <h4 style="color: var(--primary-color); font-size: 2rem;">🌱</h4>
+                    <div class="feature-icon">🌱</div>
                         <h4>Premium Quality</h4>
                         <p>All our plants are carefully selected and maintained for optimal health.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card text-center">
-                        <h4 style="color: var(--primary-color); font-size: 2rem;">🚚</h4>
+                    <div class="feature-icon">🚚</div>
                         <h4>Fast Delivery</h4>
                         <p>We deliver your plants quickly and safely to your doorstep.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card text-center">
-                        <h4 style="color: var(--primary-color); font-size: 2rem;">💡</h4>
+                    <div class="feature-icon">💡</div>
                         <h4>Expert Guidance</h4>
                         <p>Get advice from our team of experienced gardening professionals.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card text-center">
-                        <h4 style="color: var(--primary-color); font-size: 2rem;">🌍</h4>
+                    <div class="feature-icon">🌍</div>
                         <h4>Eco-Friendly</h4>
                         <p>We are committed to sustainable and environmentally responsible practices.</p>
                     </div>
@@ -114,21 +116,21 @@ include 'includes/header.php';
             
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card">
+                <div class="card services-card">
                         <h4 style="color: var(--primary-color);">🌿 Plant Care</h4>
                         <p>Professional plant maintenance and care consultations for healthy, thriving gardens.</p>
                         <a href="services.php" class="btn-outline btn-small">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card">
+                <div class="card services-card">
                         <h4 style="color: var(--primary-color);">📚 Workshops</h4>
                         <p>Join our expert-led workshops and learn essential gardening skills and techniques.</p>
                         <a href="workshops.php" class="btn-outline btn-small">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card">
+                    <div class="card services-card">
                         <h4 style="color: var(--primary-color);">🎨 Garden Design</h4>
                         <p>Custom garden design services to transform your outdoor space beautifully.</p>
                         <a href="services.php" class="btn-outline btn-small">Learn More</a>
